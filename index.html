@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office for Sustainability | UTRGV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>logo</h1>
+        <div class="menu-button-wrapper">
+            <button id="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <nav class="patua-one">
+        <ul id="navigation">
+            <li><a href="">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Academics and research</a></li>
+            <li><a href="">UN SDGs</a></li>
+            <li><a href="">Programs</a></li>
+            <li><a href="">events</a></li>
+            <li><a href="">Resources and guides</a></li>
+            <li><a href="">Sustainability fellowships</a></li>
+            <li><a href="">news</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- the way this website is structured is through the use of sections,
+          content-wrappers where necessary,
+          and classes.
+         Let's try to use semantic HTML. -->
+        <section id="banner">
+            <h1 class="hero patua-one">
+                Office for Sustainability
+            </h1>
+            <img src="quad.jpg" alt="utrgv edinburg quad">
+        </section>
+        <section id="landing" class="orange-emphasis flex-c center">
+            <div class="width-95">
+                <div class="uppercase">
+                    <h2 class="regular">Vaqueros for</h2>
+                    <h1 class="bold">Sustainability</h1>
+                </div>
+                <p><strong>Vaqueros</strong>, Vaqueros, you can't spell sustainability without <strong>U</strong> and <strong>I</strong>. The Office for Sustainability invites you to join our UTRGV strategic mission to help achieve the United Nation's 17 Sustainable Development Goals intentionally through education, research, operations, and engagement.</p>
+                <p>UTRGV <strong>Vaqueros</strong> are <strong>Valuable</strong>, <strong>Vigilant</strong>, <strong>Versatile</strong>, and <strong>Visionary</strong> Sustainable Development Leaders who are <strong>Vocal</strong> and don't back down from challenges, with strong <strong>Values</strong> that help solve problems of any scale in the Rio Grande <strong>Valley</strong>, Texas, and throughout the world.</p>
+            </div>
+        </section>
+        <section id="video" class="flex-c center dark-background">
+            <iframe class="width-95" width="560" height="315" src="https://www.youtube.com/embed/YrlMVqJJGGg?si=0DUEWc9PyF4aL_Zq&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </section>
+        <section id="change" class="center width-95">
+            <div class="padding-95 flex-c orange">
+                <h2>
+                    Change begins with <strong class="uppercase">you</strong> and continues with <strong class="uppercase">us</strong>.
+                </h2>
+                <h2 class="uppercase">
+                    Connect, collaborate & contribute
+                </h2>
+                <p> <strong>Vaqueros</strong> building a better future <strong>Together</strong> and achieving <strong>Sustainable Development</strong>.
+                </p>
+                <button class="white uppercase semi-bold" data-text="PAVE THE WAY... TAKE THE PLEDGE">pave the way... take the pledge</button>
+            </div>
+            <div class="orange-divider"></div>
+        </section>
+        <section id="3c">
+            <div id="connect">
+
+            </div>
+            <div id="collaborate">
+
+            </div>
+            <div id="contribute">
+                
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById("menu");
+        const navigation = document.querySelector("nav");
+            menuButton.addEventListener("click", ()=> {
+                menuButton.classList.toggle("active");
+                navigation.classList.toggle("active");
+            })
+    </script>
+</body>
+</html>
