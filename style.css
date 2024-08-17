@@ -3,12 +3,14 @@
     --utrgvOrange : #F05023;
     --utrgvGray : #646469;
     --utrgvText : rgb(49, 49, 49);
+    --utrgvBlue : rgb(15, 84, 155);
 }
 
-html, body {
+html, body, * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 /* typography */
@@ -23,10 +25,19 @@ Red Hat Display - sans serif font used for body text
 */
 body {
     font-family: 'red hat display', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 400;
     font-style: normal;
     color: var(--utrgvText);
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+    position: relative;
+    overflow-x: clip;
+
+    background-color: #fff; 
 }
 h1, h2, h3 {
     letter-spacing: -0.05rem;
@@ -50,59 +61,6 @@ p {
 }
 .patua-one {
     font-family: 'patua one', serif;
-}
-.thin {
-    font-weight: 300;
-}
-.regular {
-    font-weight: 400;
-}
-.medium {
-    font-weight: 500;
-}
-.semi-bold {
-    font-weight: 600;
-}
-strong, .bold {
-    font-weight: 700;
-}
-.extra-bold {
-    font-weight: 800;
-}
-.black {
-    font-weight: 900;
-}
-.justified {
-    text-align: justify;
-}
-.hero {
-    color: white;
-    text-shadow: rgb(0, 0, 0) 5px 5px 5px;
-    filter: drop-shadow(rgb(0, 0, 0) 5px 5px 5px);
-}
-
-/* layout */
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    position: relative;
-    overflow-x: clip;
-}
-.width-95 {
-    width: 75%;
-}
-.flex-c {
-    display: flex;
-    flex-direction: column;
-}
-
-/* generic */
-body {
-    background-color: #fff;
-    scroll-behavior: smooth;
 }
 header {
     padding: 0;
@@ -146,19 +104,31 @@ button:not(:hover) {
     font-weight: 600;
 }
 section {
+    width: 100%;
     margin-bottom: 40px;
     padding-block: 16px;
 }
-section.center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-self: center;
-        align-self: center;
-        margin-inline: auto;
+a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 a, a:visited, a:active {
     color: inherit;
+}
+a:hover {
+    font-weight: 800;
+    
+}
+a::after {
+    content: attr(data-text);
+    font-weight: 800;
+    height: 0px;
+    visibility: hidden;
+    overflow: hidden;
+    user-select: none;
+    pointer-events: none;
 }
 
 /* ID */
@@ -239,7 +209,7 @@ nav.active {
     flex-grow: 100;
     flex-basis: auto;
     text-align: center;
-    list-style-type: none;
+    list-style-type: disc;
 }
 #navigation li {
     padding-inline: 0px;
@@ -255,43 +225,47 @@ nav.active {
     border-bottom: rgb(202, 73, 1) solid 10px;
 }
 #navigation li::marker {
-    color: var(--utrgvOrange);
+    color: transparent;
+}
+#video {
+    background-color: var(--utrgvText);
+    text-align: center;
+}
+.banner-wrapper {
+    height: 20rem;
+    display: grid;
+    width: 100%;
+}
+.banner-wrapper h1{
+    margin: auto;
+    grid-area: 1/1;
+}
+.banner-wrapper img {
+    grid-area: 1/1;
+    object-fit: cover;
+    height: inherit;
+    width: inherit;
+}
+.white-decorated {
+    color: white;
+    text-shadow: 5px 5px 5px #000;
+    filter: drop-shadow(10px 10px 10px #000);
 }
 
-#banner {
-    width : 100%;
-    display: grid;
-    place-content: center;
-    max-height: 50%;
-    position: relative;
-    padding: 0;
+.hero {
+    color: var(--utrgvOrange);
+    line-height: 47px;
+    padding-block: 16px;
+    text-transform: uppercase;
 }
-#banner img {
-    width: 100%;
-    height: 100%;
-    grid-area: 1 / 1;
-    object-fit: cover;
+.hero h3 {
+    font-weight: 600;
+    font-size: 2.25rem;
 }
-#banner h1 {
-    grid-area: 1 / 1;
-    z-index: 3;
-    letter-spacing: 2px;
-    background-image: linear-gradient(rgba(0,0,0,0.15)0%, rgba(250, 250, 250, 0) 20%);
-    text-align: center;
-    padding-block: 25%;
+.hero h2 {
+    font-weight: 900;
 }
-#banner:hover::after {
-    content: '';
-    background: radial-gradient(circle, rgba(66,121,9,0) 0%, rgba(0, 0, 0, 0.15) 100%);
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-#landing {
-    width: 100%;
-}
+
 
 
 /* styling */
@@ -300,18 +274,43 @@ nav.active {
 absolutely no rounded corners here, sorry guys.
 
 */
-.uppercase {
-    text-transform: uppercase;
+.office-logo-wrapper>h2 , .office-logo-wrapper>h3 {
+    letter-spacing: 0;
+    word-spacing: 0;
 }
-.orange-emphasis strong, .orange-emphasis h1, .orange-emphasis h2 {
+.office-logo-wrapper>h2 {
+    font-size: 2rem;
+}
+.office-logo-wrapper>h3 {
+    font-size: 1.3rem;
     color: var(--utrgvOrange);
 }
-.dark-background {
-    background-color: #202020;
+.office-logo-wrapper a:hover {
+    color: var(--utrgvBlue);
 }
-section.orange, div.orange {
-    background-color: var(--utrgvOrange);
-    color: #fff;
+.office-logo-wrapper {
+    margin-bottom: 16px;
+}
+.padding-inline {
+    padding-inline: 32px;
+}
+.utrgv-logo {
+    font-weight: 700;
+    font-size: 17.6;
+    height: 43px;
+    width: 160px;
+
+    text-indent: -9999px;
+    background-color: transparent;
+    background-attachment: scroll;
+    background-size: auto;
+    background-origin: padding-box;
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-image: url("https://www.utrgv.edu/bootstrap/ss/images/logo.png");
+}
+.uppercase {
+    text-transform: uppercase;
 }
 button.orange {
     color: #fff;
@@ -354,13 +353,7 @@ button.white:not(:hover) {
     position: absolute;
 }
 
-.padding-95 {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 100%;
-    padding: 5%;
-}
-.orange-background {
+.orange {
     background-color: var(--utrgvOrange);
 }
 .orange-divider {
@@ -369,5 +362,18 @@ button.white:not(:hover) {
     background-repeat: repeat-x;
     width: 100%;
     height: 100px;
+}
+
+.news-wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+.news-wrapper article {
+    max-width: 30%;
+}
+.news-post > img {
+    width: 100%;
+    max-height: 10rem;
+    object-fit: cover;
 }
 
