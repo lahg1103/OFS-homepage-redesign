@@ -234,17 +234,20 @@ nav.active {
 .banner-wrapper {
     height: 20rem;
     display: grid;
+    place-content: center;
+    align-items: center;
     width: 100%;
 }
 .banner-wrapper h1{
-    margin: auto;
+    /* margin: auto; */
+    text-align: center;
     grid-area: 1/1;
 }
 .banner-wrapper img {
     grid-area: 1/1;
     object-fit: cover;
     height: inherit;
-    width: inherit;
+    width: 100vw;
 }
 .white-decorated {
     color: white;
